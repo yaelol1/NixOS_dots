@@ -1,14 +1,15 @@
-
 { pkgs, lib, ...}:{
   environment.systemPackages = with pkgs; [
-    bat
-    eza
-    exercism
-    glow
-    git
-    unzip
-    wget
-    zip
+   bat
+   eza
+   emacs
+   exercism
+   glow
+   git
+   git-credential-manager
+   unzip
+   wget
+   zip
   ];
 
 }
