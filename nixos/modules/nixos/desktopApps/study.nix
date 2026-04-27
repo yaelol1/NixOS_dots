@@ -17,6 +17,7 @@
   environment.systemPackages = with pkgs; [
     obsidian
     calibre
+    foliate
     anki
     typst
     tinymist

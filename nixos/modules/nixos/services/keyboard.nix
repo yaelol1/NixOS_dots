@@ -8,8 +8,9 @@
    #  };
  #  };  
 #};
-environment.systemPackages = with pkgs; [
-  kanata
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    kanata
   ];
 
 

@@ -144,23 +144,23 @@ tooltip {
     color: #FFFFFF;
     background:  rgba(22, 19, 32, 0.9);
     margin: 6px 0px 6px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 #backlight{
-    color: #2096C0;
+    color: #b7b7b7;
     background: rgba(23, 23, 23, 0.0);
     font-weight: normal;
     font-size: 19px;
     margin: 1px 0px 0px 0px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
 
 }
 #bluetooth,
 #custom-cliphist{
-    color: #E6E7E7;
+    color: #b7b7b7;
     background:  #161320;
     opacity: 1;
     margin: 4px 0px 4px 0px;
@@ -171,7 +171,7 @@ tooltip {
 #battery{
     font-weight: normal;
     font-size: 22px;
-    color: #a6d189;
+    color: #b7b7b7;
     background:  rgba(23, 23, 23, 0.0);
     opacity: 1;
     margin: 0px 0px 0px 0px;
@@ -181,7 +181,7 @@ tooltip {
 }
 
 #idle_inhibitor{
-    color: #24966e;
+    color: #b7b7b7;
     background: @bar-bg;
     opacity: 1;
     margin: 4px 0px 4px 0px;
@@ -190,7 +190,7 @@ tooltip {
 
 }
 #clock{
-    color: #A1BDCE;
+    color: #b7b7b7;
     font-size: 15px;
     font-weight: 900;
     font-family: "JetBrains Mono Nerd Font";
@@ -205,11 +205,11 @@ tooltip {
 #pulseaudio{
     font-weight: normal;
     font-size: 18px;
-    color: #6F8FDB;
+    color: #b7b7b7;
     background:  rgba(22, 19, 32, 0.0);
     opacity: 1;
-    margin: 0px 0px 0px 0px;
-    padding-left: 6px;
+    margin: 2px 2px 2px 2px;
+    padding-left: 4px;
     padding-right: 6px;
 }
 #cpu{
@@ -251,7 +251,7 @@ tooltip {
     }
 }
 #network{
-    color: #A1BDCE;
+    color: #b7b7b7;
     font-weight: normal;
     font-size: 19px;
     padding-right: 4px;
@@ -285,7 +285,7 @@ tooltip {
 #cava,
 #upower#headset,
 #upower{
-    color: #a6d189;
+    color: #b7b7b7;
 }
 #mpris{
     font-size: 15px;
@@ -328,7 +328,7 @@ tooltip {
 }
 
 #battery.charging, #battery.plugged {
-    color: #E8EDF0;
+    color: #b7b7b7;
 
 }
 

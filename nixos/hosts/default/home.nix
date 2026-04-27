@@ -38,18 +38,18 @@
   ];
 
   # Hyprland
-  wayland.windowManager.hyprland = {
-	enable = true;
-	extraConfig = "source = ~/.config/hypr/main.conf";
-  };
+  # wayland.windowManager.hyprland = {
+	#   enable = true;
+	#   extraConfig = "source = ~/.config/hypr/main.conf";
+  # };
 
   # https://github.com/jooizie/vim-colemak
   programs.vim = {
-	enable = true;
-	plugins = with pkgs.vimPlugins; [ vim-nix vim-lastplace vim-colemak vim-airline vim-surround delimitMate ];
- 	settings = {ignorecase = true; };
-	extraConfig = ''
-	  set mouse=a
+	  enable = true;
+	  plugins = with pkgs.vimPlugins; [ vim-nix vim-lastplace vim-colemak vim-airline vim-surround delimitMate ];
+ 	  settings = {ignorecase = true; };
+	  extraConfig = ''
+      set mouse=a
 	 '';
   };
 
@@ -95,6 +95,17 @@
       cc5 = "cd ../../../../..";
 
     };
+    bashrcExtra = ''
+    y() {
+      local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+      command yazi "$@" --cwd-file="$tmp"
+      IFS= read -r -d ' ' cwd < "$tmp"
+        [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+          rm -f -- "$tmp"
+    }
+    '';
+
+
   };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

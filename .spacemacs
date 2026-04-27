@@ -36,7 +36,9 @@ This function should only modify configuration layer settings."
    ;; ----------------------------------------------------------------
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(csv
+   '(go
+     toml
+     csv
      yaml
      graphviz
      html
@@ -63,17 +65,11 @@ This function should only modify configuration layer settings."
      (version-control :variables
                       version-control-diff-tool 'diff-hl
                       version-control-global-margin t)
-     (git :variables
-          git-magit-status-fullscreen t
-          magit-diff-refine-hunk t
-          git-enable-magit-todos-plugin t)
-
      restructuredtext
-     helm
-     typst
      haskell
      nixos
      typescript
+     neotree
      lsp
      markdown
      multiple-cursors
@@ -84,7 +80,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     treemacs)
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -618,21 +614,23 @@ This function is called at the very end of Spacemacs initialization."
                           auto-compile auto-highlight-symbol avy bind-map blacken
                           bui centered-cursor-mode cfrs clang-format
                           clean-aindent-mode code-cells column-enforce-mode
-                          company-anaconda company-web compat concurrent cond-let
-                          counsel counsel-css csv-mode ctable cython-mode dap-mode
-                          dash define-word devdocs diminish dired-quick-sort
-                          disable-mouse dotenv-mode drag-stuff dumb-jump
-                          editorconfig elisp-def elisp-demos elisp-slime-nav
-                          emmet-mode emr epc epl eval-sexp-fu evil evil-anzu
-                          evil-args evil-cleverparens evil-collection
+                          company-anaconda company-go company-web compat
+                          concurrent cond-let counsel counsel-css csv-mode ctable
+                          cython-mode dap-mode dash define-word devdocs diminish
+                          dired-quick-sort disable-mouse dotenv-mode drag-stuff
+                          dumb-jump editorconfig elisp-def elisp-demos
+                          elisp-slime-nav emmet-mode emr epc epl eval-sexp-fu evil
+                          evil-anzu evil-args evil-cleverparens evil-collection
                           evil-easymotion evil-escape evil-evilified-state
                           evil-exchange evil-goggles evil-iedit-state
                           evil-indent-plus evil-lion evil-lisp-state evil-matchit
                           evil-mc evil-nerd-commenter evil-numbers evil-surround
                           evil-textobj-line evil-tutor evil-unimpaired
                           evil-visual-mark-mode evil-visualstar expand-region
-                          eyebrowse f fancy-battery focus focus-autosave-mode
-                          fountain-mode ggtags golden-ratio google-translate
+                          eyebrowse f fancy-battery flycheck-golangci-lint focus
+                          focus-autosave-mode fountain-mode ggtags go-eldoc
+                          go-fill-struct go-gen-test go-guru go-impl go-mode
+                          go-rename go-tag godoctor golden-ratio google-translate
                           goto-chg graphviz-dot-mode haml-mode helm helm-ag
                           helm-comint helm-core helm-cscope helm-css-scss
                           helm-descbinds helm-make helm-mode-manager helm-org
@@ -646,26 +644,27 @@ This function is called at the very end of Spacemacs initialization."
                           json-reformat json-snatcher link-hint list-utils
                           live-py-mode livid-mode llama load-env-vars
                           load-relative loc-changes lorem-ipsum lsp-docker
-                          lsp-pyright lv macrostep magit magit-section magit-todos
-                          mathjax multi-line multiple-cursors nameless nerd-icons
-                          nodejs-repl nose npm-mode open-junk-file org
-                          org-superstar overseer paradox paredit parent-mode
-                          password-generator pcre2el pdf-tools pdf-view-restore
-                          persp-mode pfuture pip-requirements pipenv pippel
-                          pkg-info poetry popup popwin posframe powerline
-                          prettier-js projectile pug-mode py-isort pydoc
-                          pyenv-mode pylookup pytest pythonic pyvenv quickrun
-                          rainbow-delimiters realgud reformatter restart-emacs
-                          ruff-format s sass-mode scss-mode shell-pop shut-up
-                          simple-httpd skewer-mode slim-mode smartparens smeargle
-                          space-doc spaceline spacemacs-purpose-popwin
-                          spacemacs-whitespace-cleanup sphinx-doc spinner
-                          sql-indent string-edit-at-point string-inflection swiper
-                          symbol-overlay symon tablist tagedit term-cursor
-                          terminal-here test-simple toc-org transient treemacs
-                          treemacs-evil treemacs-icons-dired treemacs-magit
-                          treemacs-persp treemacs-projectile typescript-mode
-                          undo-fu undo-fu-session unfill uuidgen vi-tilde-fringe
+                          lsp-pyright lsp-treemacs lv macrostep magit
+                          magit-section magit-todos mathjax multi-line
+                          multiple-cursors nameless neotree nerd-icons nodejs-repl
+                          nose npm-mode open-junk-file org org-superstar overseer
+                          paradox paredit parent-mode password-generator pcre2el
+                          pdf-tools pdf-view-restore persp-mode pfuture
+                          pip-requirements pipenv pippel pkg-info poetry popup
+                          popwin posframe powerline prettier-js projectile
+                          pug-mode py-isort pydoc pyenv-mode pylookup pytest
+                          pythonic pyvenv quickrun rainbow-delimiters realgud
+                          reformatter restart-emacs ruff-format s sass-mode
+                          scss-mode shell-pop shut-up simple-httpd skewer-mode
+                          slim-mode smartparens smeargle space-doc spaceline
+                          spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+                          sphinx-doc spinner sql-indent string-edit-at-point
+                          string-inflection swiper symbol-overlay symon tablist
+                          tagedit term-cursor terminal-here test-simple toc-org
+                          toml-mode transient treemacs treemacs-evil
+                          treemacs-icons-dired treemacs-magit treemacs-persp
+                          treemacs-projectile typescript-mode undo-fu
+                          undo-fu-session unfill uuidgen vi-tilde-fringe
                           visual-fill-column volatile-highlights vterm vundo
                           web-beautify web-completion-data web-mode wfnames wgrep
                           which-key window-purpose winum with-editor
